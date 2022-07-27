@@ -1,0 +1,20 @@
+MAINICON ICON "kangurek.ico"
+
+1 VERSIONINFO
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "041504E4"
+    BEGIN
+      VALUE "FileDescription", "Kao2 XRay"
+      // VALUE "ProductName", ""
+      // VALUE "FileVersion", ""
+      // VALUE "InternalName", "kao2mp_xray"
+      // VALUE "OriginalFilename", "kao2_xray.exe"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0415, 0x04E4
+  END
+END

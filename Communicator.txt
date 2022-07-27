@@ -1,0 +1,77 @@
+
+================================================================
+== "kao2.exe" (Retail version)
+== Communicator (Multiline Ultimate Assembler Plugin)
+================================================================
+
+    <004902D6..004902E8>
+    
+        ;; Here, we remove checking `if (NULL != [0x006267CC])`,
+        ;; because `global eKao2Gamelet *` is NEVER NULL at this point,
+        ;; and it gives us enough room to squize a far away call...
+    
+        call 005CC660
+        
+        cmp dword[0x006267DC],0
+          je 0x0049030C
+
+        !pad 0x90
+
+    ;;  <005CC65F>
+    ;;      nop
+
+    ;;  <005CC660>
+    ;;      file 'fasmg/kao2_retail_comm.bin'
+        
+
+================================================================
+== "kao2.exe" (Retail version)
+== Communicator (assembled bytecode)
+================================================================
+
+  004902D6: E8 85 C3 13 00 83 3D DC 67 62 00 00 74 28 90 90 90 90
+  
+  005CC660: 55 89 E5 53 56 57 A1 00 1E 64 00 89 C1 83 E0 07 83 F8 00 74 5B C1 E9 03 89 CB C1 E3 02 31 D2 31 F6 83 F8 02 74 13 83 F8 03 74 0E 83 F8 04 75 35 8B 15 08 1E 64 00 83 C6 04 81 C6 08 1E 64 00 29 DC 89 E7 83 F8 02 74 02 31 DB F3 A5 89 D1 FF 15 04 1E 64 00 01 DC A3 04 1E 64 00 C7 05 00 1E 64 00 01 00 00 00 83 3D 00 1E 64 00 01 74 F7 EB 96 5F 5E 5B 5D C3
+
+  00641E00: 00 00 00 00
+  ;; wcześniej dla pewności aż 00641F00
+
+
+================================================================
+== "kao_tw.exe" (Retail version)
+== Communicator (Multiline Ultimate Assembler Plugin)
+================================================================
+
+    <00465D06..00465D18>
+    
+        ;; Here, we remove checking `if (NULL != [0x0075C900])`,
+        ;; because `global eKao2Gamelet *` is NEVER NULL at this point
+    
+        call 0x00696F10
+
+        cmp dword[0x0075C918],0
+          je 0x00465D3C
+        
+        !pad 0x90
+
+
+    ;;  <00696F0F>
+    ;;      nop
+
+    ;;  <00696F10>
+    ;;      file 'fasmg/kao_tw_retail_comm.bin'
+        
+
+================================================================
+== "kao_tw.exe" (Retail version)
+== Communicator (assembled bytecode)
+================================================================
+
+  00465D06: E8 05 12 23 00 83 3D 18 C9 75 00 00 74 28 90 90 90 90
+  
+  00696F10: 55 89 E5 53 56 57 A1 40 50 78 00 89 C1 83 E0 07 83 F8 00 74 5B C1 E9 03 89 CB C1 E3 02 31 D2 31 F6 83 F8 02 74 13 83 F8 03 74 0E 83 F8 04 75 35 8B 15 48 50 78 00 83 C6 04 81 C6 48 50 78 00 29 DC 89 E7 83 F8 02 74 02 31 DB F3 A5 89 D1 FF 15 44 50 78 00 01 DC A3 44 50 78 00 C7 05 40 50 78 00 01 00 00 00 83 3D 40 50 78 00 01 74 F7 EB 96 5F 5E 5B 5D C3
+
+  00785040: 00 00 00 00
+
+
+================================================================

@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/*.bin": true,
+    },
+
+    "personal.fasmg": "C:/Workdir/fasmg",
+    "personal.include": "${config:personal.fasmg}/packages/utility;${config:personal.fasmg}/packages/x86/include;",
+
+    "files.encoding": "utf8",
+}
